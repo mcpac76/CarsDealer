@@ -1,0 +1,31 @@
+﻿@model  List<Car>
+
+@{
+    ViewData["Title"] = "CARS";
+}
+
+<h2>Cars</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.Single().Make)</th>
+            <th>@Html.DisplayNameFor(x => x.Single().Model)</th>
+            <th>@Html.DisplayNameFor(x => x.Single().Year)</th>
+            <th>@Html.DisplayNameFor(x => x.Single().Price)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            foreach (var car in Model)
+            {
+                <tr>
+                    <td>@car.Make</td>
+                    <td>@car.Model</td>
+                    <td>@car.Year</td>
+                    <td>@car.Price</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
